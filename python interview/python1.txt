@@ -1,0 +1,251 @@
+1.Write a program to find the factorial of a number.
+def factorial(n):
+    ans = 1
+    while n>0:
+        ans = ans*n
+        n=n-1
+    return ans  
+
+
+n = int(input("enter any number : "))
+if n < 0:
+    print("not a valid number")
+elif n == 0:
+    print('1')
+else:
+    print(factorial(n))
+
+
+2.Write a function to determine if a string is a palindrome.
+str = input("enter string : ")
+str = str.replace(" ","")
+if str == str[::-1]:
+    print("it is palindrome")
+else:
+    print("string is not palindrome")
+
+
+3.Write a program to find the largest and smallest numbers in a list.
+list1=[]
+n = int(input("how many number in the list : "))
+for i in range(n):
+    l = int(input("enter "))
+    list1.append(l)
+
+
+print("smallest no is ",min(list1))
+print("largest no is ",max(list1))
+
+
+4.Write a function to reverse a string.
+str = input("enter a string :")
+print(str.replace(" ","")[::-1])
+
+
+5.Write a program to count the number of occurrences of a character in a string.
+str = input("enter string : ")
+str = str.replace(" ","")
+str_set = set()
+for i in str:
+    str_set.add(i)
+for n in str_set:
+    print(n,"count is ",str.count(n))
+
+
+6.Write a function to check if a number is prime.
+def primeNo(n):
+    flag = False
+    for i in range(2,n):
+        if n%i==0:
+            flag=True
+            break
+    if flag==False:
+        print("Prime no")
+    else:
+        print("it is not prime no")
+n = int(input("enter no : "))
+if n<0:
+    print("negative number cant be prime")
+elif n==1:
+    print("1 is not prime no")
+else:
+    primeNo(n)
+
+
+7.Write a program to find the sum of all the elements in a list
+suml = []
+n = int(input("enter how many no isn the list : "))
+if n < 0:
+    print("not a valid no")
+elif n == 0:
+    print("not a valid no")
+else:
+    for i in range(n):
+        b = int(input("enter no : "))
+        suml.append(b)
+    print("sum of all elements is : ",sum(suml))
+.
+
+8.Write a function to sort a list of integers in ascending or descending order.
+nums = []
+n = int(input("enter how many no isn the list : "))
+if n < 0:
+    print("not a valid no")
+elif n == 0:
+    print("not a valid no")
+else:
+    for i in range(n):
+        b = int(input("enter no : "))
+        nums.append(b)
+nums.sort()
+print("ascending order = ",nums)
+nums.sort(reverse=True)
+print("descending order = ",nums)
+
+9.Write a program to find the length of the longest common prefix in a list of strings.
+
+
+def longestCommonPrefix( a):
+   
+    size = len(a)
+
+
+   
+    if (size == 0):
+        return ""
+
+
+    if (size == 1):
+        return a[0]
+
+
+
+
+    a.sort()
+   
+
+
+    end = min(len(a[0]), len(a[size - 1]))
+
+
+    i = 0
+    while (i < end and
+        a[0][i] == a[size - 1][i]):
+        i += 1
+
+
+    pre = a[0][0: i]
+    return pre
+
+
+
+
+
+
+inl=[]
+n = int(input("how many elemetns in the list"))
+for i in range(n):
+    b = input("enter string : ")
+    b=b.replace(" ","")
+    inl.append(b)
+
+
+print("The longest Common Prefix is :" ,longestCommonPrefix(inl))
+
+
+
+10.Write a function to calculate the nth Fibonacci number.
+def fibonacci(n):
+    if n < 0:
+        print("Incorrect input")
+ 
+   
+    elif n == 0:
+        return 0
+    elif n == 1 or n == 2:
+        return 1
+ 
+    else:
+        return fibonacci(n-1) + fibonacci(n-2)
+
+
+n = int(input("enter any number : "))
+print(fibonacci(n))
+
+
+11.Write a program to remove duplicates from a list.
+str = input("enter : ")
+str = str.replace(" ","")
+str_list = []
+for i in str:
+    str_list.append(i)
+str_set = set(str_list)
+str_list = list(str_set)
+print(str_list)
+
+
+12.Write a function to calculate the factorial of a number using recursion.
+def facty(n):
+    return 1 if (n==1 or n==0) else n*facty(n-1)
+
+
+n = int(input("enter any number : "))
+if n < 0:
+    print("not a valid number")
+elif n == 0:
+    print('1')
+else:
+    print(facty(n))
+
+
+
+
+13.Write a program to check if a number is an Armstrong number.
+def armstrong(n):
+    sum=0
+    temp=n
+    while temp != 0:
+        digit = temp % 10
+        sum += digit ** 3
+        temp //= 10
+    if sum==n:
+        print("It is armstrong no")
+    else:
+        print("It is not armstrong no")
+n = int(input("enter any number : "))
+if n < 0:
+    print("not a valid number")
+elif n == 0:
+    print("not valid")
+else:
+    armstrong(n)
+
+
+14.Write a function to check if a string is a valid palindrome ignoring white space and punctuation.
+import re
+str = input("enter string : ")
+str = str.replace(" ","")
+# str = str.replace(re.findall("[^a-zA-Z0-9]",str),"")
+for i in re.findall("[^a-zA-Z0-9]",str):
+    str=str.replace(i,"")
+if str == str[::-1]:
+    print("it is palindrome")
+else:
+    print("string is not palindrome")
+
+
+
+15.Write a program to calculate the average of a list of numbers.
+suml = []
+n = int(input("enter how many no isn the list : "))
+if n < 0:
+    print("not a valid no")
+elif n == 0:
+    print("not a valid no")
+else:
+    for i in range(n):
+        b = int(input("enter no : "))
+        suml.append(b)
+    print("sum of all elements is : ",sum(suml))
+    print("average is : ",sum(suml)/len(suml))
+
